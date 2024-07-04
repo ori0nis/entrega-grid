@@ -61,12 +61,13 @@ header > h1 {
   font-family: var(--font-family);
   text-align: center;
   padding-top: 5px;
+  font-size: 30px;
 }
 
 header > p {
   font-family: var(--font-family);
   text-align: justify;
-  padding: 22px;
+  padding: 35px;
 }
 
 footer {
@@ -81,6 +82,10 @@ footer > h3,
 footer > p {
   font-family: var(--font-family);
   padding: 10px;
+}
+
+footer > p {
+  padding-right: 35px;
 }
 
 footer > button {
@@ -105,4 +110,98 @@ main > h2 {
   padding-right: 30px;
   text-align: center;
   grid-row: 2 / 3;
+}
+
+/* Media queries */
+/* Tengo que decirlo, estoy bastante orgullosa de estas media queries :') */
+
+@media screen and (max-width: 850px) {
+  body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: var(--spacing);
+  }
+
+  header > h1 {
+    font-size: 40px;
+  }
+
+  main {
+    grid-row: 3 / 4;
+  }
+
+  .alumni {
+    grid-row: 4 / 5;
+  }
+
+  .time {
+    grid-row: -3 / -1;
+    background-size: cover;
+    background-position: center;
+  }
+
+  button {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 651px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7, 1fr);
+    gap: var(--spacing);
+    text-align: center;
+    margin-left: 20px;
+  }
+
+  footer {
+    grid-row: 7 / 8;
+    grid-column: 1;
+  }
+
+  .alumni {
+    grid-row: 6 / 7;
+    grid-column: 1;
+  }
+
+  main {
+    grid-row: 5 / 6;
+    grid-column: 1;
+    font-size: 20px;
+  }
+
+  .student {
+    grid-row: 4 / 5;
+    grid-column: 1;
+  }
+
+  .school {
+    grid-row: 3 / 4;
+    grid-column: 1;
+  }
+
+  header {
+    grid-row: 1 / 3;
+    grid-column: 1;
+    padding: 25px;
+  }
+
+  header > p {
+    font-size: 22px;
+  }
+
+  header > h1 {
+    font-size: 50px;
+  }
+
+  footer > h3 {
+    font-size: 25px;
+  }
+
+  footer > p {
+    padding-right: 5px;
+    font-size: 18px;
+  }
 }
